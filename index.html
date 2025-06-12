@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>تحميل تطبيق OptiEspCs2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative;
+    cursor: none;
+  }
+
+  .container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 45px 70px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 191, 165, 0.6);
+    max-width: 480px;
+    text-align: center;
+    animation: fadeInUp 1s ease forwards;
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 {
+    font-weight: 700;
+    margin-bottom: 18px;
+    font-size: 2.8rem;
+    letter-spacing: 1.5px;
+    color: #00d1b2;
+    text-shadow: 0 0 15px #00d1b2;
+    user-select: none;
+  }
+
+  h1 span {
+    background: linear-gradient(45deg, #00e6c1, #008e75);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  p {
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+    color: #b0b0b0;
+  }
+
+  a.download-btn {
+    background: #00d1b2;
+    color: #0a0a0a;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.35rem;
+    padding: 20px 55px;
+    border-radius: 60px;
+    box-shadow: 0 8px 25px rgba(0, 209, 178, 0.7);
+    transition: all 0.35s ease;
+    display: inline-block;
+    user-select: none;
+  }
+
+  a.download-btn:hover {
+    background: #009e75;
+    box-shadow: 0 10px 40px rgba(0, 158, 117, 0.9);
+    transform: translateY(-3px);
+  }
+
+  footer {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #666;
+    user-select: none;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+  }
+
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(25px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* المؤثر الذي يتبع الماوس */
+  .cursor-trail {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(0, 255, 200, 0.2);
+    border: 1px solid #00ffe7;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: fadeOut 1s forwards;
+    z-index: 1;
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(2);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 30px 25px;
+      max-width: 90vw;
+    }
+    h1 {
+      font-size: 2.2rem;
+    }
+    a.download-btn {
+      padding: 16px 35px;
+      font-size: 1.2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    footer {
+      margin-top: 15px;
+      font-size: 0.85rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>تحميل تطبيق <br> <span>OptiEspCs2</span></h1>
+    <p>احصل على أفضل تجربة ESP للعبة CS:GO 2 بسهولة وأمان.</p>
+    <a href="OptiEsp-v2.rar" class="download-btn" download>تحميل التطبيق الآن</a>
+  </div>
+
+  <footer>© 2025 OptiPro</footer>
+
+  <script>
+    document.addEventListener("mousemove", e => {
+      const trail = document.createElement("div");
+      trail.className = "cursor-trail";
+      trail.style.left = `${e.pageX}px`;
+      trail.style.top = `${e.pageY}px`;
+      document.body.appendChild(trail);
+      setTimeout(() => trail.remove(), 800);
+    });
+  </script>
+
+</body>
+</html>
